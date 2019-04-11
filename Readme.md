@@ -1,7 +1,7 @@
 # Личный проект «YetiCave»
 
 * Студент: [Виктория Низаева](https://up.htmlacademy.ru/php/9/user/870965).
-* Наставник: `Неизвестно`.
+* Наставник: [Андрей Рычагов](https://htmlacademy.ru/profile/id50483).
 
 ---
 
