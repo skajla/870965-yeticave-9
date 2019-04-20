@@ -12,6 +12,20 @@ $announcements = [
     ['title' => 'Куртка для сноуборда DC Mutiny Charocal', 'category' => 'Одежда', 'cost' => 7500, 'img_path' => 'img/lot-5.jpg'],
     ['title' => 'Маска Oakley Canopy', 'category' => 'Разное', 'cost' => 5400, 'img_path' => 'img/lot-6.jpg']
 ];
+
+  function format_cost ($cost) {
+    $round_cost = ceil($cost);
+
+    if ($round_cost < 1000) {
+        $final_cost = $round_cost;
+    } elseif ($round_cost >= 1000) {
+        $final_cost = number_format($round_cost, 0, '.', ' ');
+    } else {
+        $final_cost = $round_cost;
+    }
+
+    return $final_cost .= '<b class="rub">р</b>';
+  }
 ?>
 
 <!DOCTYPE html>
@@ -86,7 +100,7 @@ $announcements = [
                         <div class="lot__state">
                             <div class="lot__rate">
                                 <span class="lot__amount">Стартовая цена</span>
-                                <span class="lot__cost"><?= $announcement['cost'] ?><b class="rub">р</b></span>
+                                <span class="lot__cost"><?= format_cost ($announcement['cost']) ?></span>
                             </div>
                             <div class="lot__timer timer">
                                 12:23
