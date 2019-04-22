@@ -14,14 +14,11 @@ $announcements = [
 ];
 
   function format_cost ($cost) {
-    $round_cost = ceil($cost);
+    $cost = ceil($cost);
+    $final_cost = $cost;
 
-    if ($round_cost < 1000) {
-        $final_cost = $round_cost;
-    } elseif ($round_cost >= 1000) {
-        $final_cost = number_format($round_cost, 0, '.', ' ');
-    } else {
-        $final_cost = $round_cost;
+    if ($cost >= 1000) {
+        $final_cost = number_format($cost, 0, '.', ' ');
     }
 
     return $final_cost .= '<b class="rub">р</b>';
